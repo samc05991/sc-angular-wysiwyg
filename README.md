@@ -11,7 +11,7 @@ Add the module to your `app.module` imports section
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ScAngularWysiwygModule } from 'dist/sc-angular-wysiwyg'
+import { ScAngularWysiwygModule } from 'sc-angular-wysiwyg';
 
 @NgModule({
   declarations: [
