@@ -1,0 +1,46 @@
+<div class="sc-container">
+    <div class="sc-toolbar">
+        <div>
+            <button 
+                *ngFor="let command of editorConfig.commands" 
+                title="{{command.title}}" 
+                class="sc-tool-btn" 
+                (click)="executeCommand(command.command, false, '')">
+                <i class="{{command.icon}}"></i>
+                {{command.text ? command.text : ''}}
+            </button>
+        </div>
+
+        <div class="sc-form-group">
+            <form class="sc-form" [formGroup]="fontTypeForm">
+                <select formControlName="fonttype" id="fonttype">
+                    <option *ngFor="let fontType of editorConfig.advanced.fontName.values" [value]="fontType">
+                        {{fontType}}
+                    </option>
+                </select>
+            </form>
+        
+            <form class="sc-form" [formGroup]="fontSizeForm">
+                <select formControlName="fontsize" id="fontsize">
+                    <option *ngFor="let fontSize of editorConfig.advanced.fontSize.values | keyvalue" [value]="fontSize.key">
+                        {{fontSize.value}}
+                    </option>
+                </select>
+            </form>
+        
+            <form class="sc-form" [formGroup]="formatForm">
+                <select formControlName="formatblock" id="formatblock">
+                    <option *ngFor="let format of editorConfig.advanced.formatblock.values | keyvalue" [value]="format.key">
+                        {{format.value}}
+                    </option>
+                </select>
+            </form>
+        </div>
+    </div>
+    
+    <div [hidden]="showHtml" class="sc-editor" contenteditable (keyup)="onKey($event)">
+        <p> Get typing!!</p>
+    </div>
+
+    <section [hidden]="!showHtml" class="sc-html-display"></section>
+</div>

@@ -1,0 +1,58 @@
+:root {
+    --sc-toolbar-bg-color: #3F403F;
+    --sc-toolbar-btn-color: #3F403F;
+    --sc-toolbar-font-color: #E3E6E4;
+
+    --sc-editor-bg-color: #E3E6E4;
+    --sc-editor-font-color: #3F403F;
+}
+
+.sc-container {
+    display: inline-block;
+
+    .sc-toolbar {
+        padding: 5px;
+        max-width: 931px;
+        background-color: var(--sc-toolbar-bg-color);
+        display: inline-block;
+
+        .sc-tool-btn {
+            min-width: 40px;
+            height: 40px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 0px;
+            margin-right: 10px;
+            color: var(--sc-toolbar-font-color);
+            background-color: var(--sc-toolbar-btn-color);
+        }
+        .sc-form-group {
+            display: inline-block;
+
+            .sc-form {
+                display: inline-block;
+    
+                select {
+                    height: 30px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+
+    .sc-editor {
+        padding: 5px;
+        color: var(--sc-editor-font-color);
+        background-color: var(--sc-editor-bg-color);
+        max-width: 931px;
+        box-sizing: border-box;
+    }
+
+    .sc-html-display {
+        padding: 5px;
+        color: var(--sc-editor-font-color);
+        background-color: var(--sc-editor-bg-color);
+        max-width: 931px;
+        box-sizing: border-box;
+    }
+}
